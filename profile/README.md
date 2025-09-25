@@ -79,10 +79,39 @@ IWindow*  <---------------------------->  SfmlWindow*
 
 # Libraries
 
-[x] imodule
+<details><summary>Basics</summary>
 
-[] igraphic 
-[] iapp
-[] inetwork
+- [ ] CMake
+- [x] FetchDependencies (using FindPackage)
+- [x] Test (GoogleTest)
+- [ ] select linkage dependencies type (ToolBSL was made to handle this but doesn’t work as wanted) could be abort later
+- [ ] HunterV3 using IModule + ECS + IGraphic,IApp + ImpGraphic(optionally ImpApp which could be the game).
 
-    
+</details>
+
+<details><summary>Static Concrete</summary>
+
+- [x] system
+- [ ] math
+- [ ] ecs
+
+</details>
+
+<details><summary>Interface</summary>
+
+- [x] imodule -> IModule
+- [x] igraphic -> IGraphicModule
+- [ ] iapp -> IAppModule
+- [ ] inetwork (want to work and learn and use standalone asio) -> INetworkApp (AsioNetworkModule)
+
+</details>
+
+<details><summary>Shared Implementation</summary>
+
+- [ ] raygraphic -> RayGraphicModule
+- [ ] sfmlgraphic -> SfmlGraphicModule
+- [ ] sdlgraphic -> SdlGraphicModule
+- [ ] asionetwork -> AsioNetworkModule
+- [ ] hunterapp -> HunterAppModule
+
+</details>
