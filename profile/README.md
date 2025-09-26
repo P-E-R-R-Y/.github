@@ -2,9 +2,7 @@
 
 <details>
 <summary>
-
-## Libraries
-
+Libraries
 </summary>
 
 ### Static
@@ -35,9 +33,7 @@ Game -> IGraphic -> RayGraphic -> Raylib
 
 <details>
 <summary>
-
-   ## Module
-
+Module
 </summary>
 
 The Module is a flexible interface layer that lets you load, manage, and interact with modules without knowing their concrete implementation.
@@ -77,14 +73,14 @@ IWindow*  <---------------------------->  SfmlWindow*
 
 </details>
 
-# Libraries
+## Libraries
 
 <details><summary>Basics</summary>
 
-- [ ] CMake
+- [x] CMake
 - [x] FetchDependencies (using FindPackage)
 - [x] Test (GoogleTest)
-- [ ] select linkage dependencies type (ToolBSL was made to handle this but doesn’t work as wanted) could be abort later
+- [ ] CMakeUtils -> ToolBSL
 - [ ] HunterV3 using IModule + ECS + IGraphic,IApp + ImpGraphic(optionally ImpApp which could be the game).
 
 </details>
@@ -115,3 +111,15 @@ IWindow*  <---------------------------->  SfmlWindow*
 - [ ] hunterapp -> HunterAppModule
 
 </details>
+
+## Testing
+
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
+&& cmake --build build --clean-first \
+&& ctest --test-dir build --output-on-failure
+
+- [x] GTest
+- [x] set WorkingDirectory
+- [ ] set Environment (I know how but don't have to try it)
+
+##
