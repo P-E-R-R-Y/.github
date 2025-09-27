@@ -80,7 +80,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 - [x] CMake
 - [x] FetchDependencies (using FindPackage)
 - [x] Test (GoogleTest)
-- [ ] CMakeUtils -> ToolBSL
+- [ ] CMakeUtils -> ToolBSL 
 - [ ] HunterV3 using IModule + ECS + IGraphic,IApp + ImpGraphic(optionally ImpApp which could be the game).
 
 </details>
@@ -88,7 +88,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 <details><summary>Static Concrete</summary>
 
 - [x] system
-- [ ] math
+- [x] maths
 - [ ] ecs
 
 </details>
@@ -104,7 +104,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 
 <details><summary>Shared Implementation</summary>
 
-- [ ] raygraphic -> RayGraphicModule
+- [x] raygraphic -> RayGraphicModule
 - [ ] sfmlgraphic -> SfmlGraphicModule
 - [ ] sdlgraphic -> SdlGraphicModule
 - [ ] asionetwork -> AsioNetworkModule
@@ -114,12 +114,23 @@ IWindow*  <---------------------------->  SfmlWindow*
 
 ## Testing
 
+- [x] GTest
+- [x] set WorkingDirectory
+
+```
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
 && cmake --build build --clean-first \
 && ctest --test-dir build --output-on-failure
+```
 
-- [x] GTest
-- [x] set WorkingDirectory
-- [ ] set Environment (I know how but don't have to try it)
+## CI
 
-##
+- [x] ci test on repository
+- [x] gui test -> see raygraphic
+
+## Documentation
+
+- [x] org wiki
+- [ ] generate doxygen on repository
+- [ ] merge doxygen on organisation.
+- [ ] ci - cron to update it every day.
