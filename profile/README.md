@@ -97,6 +97,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 
 - [x] imodule -> IModule
 - [x] igraphic -> IGraphicModule
+  - [ ] rework sound -> with SoundRessource
 - [ ] iapp -> IAppModule
 - [ ] inetwork (want to work and learn and use standalone asio) -> INetworkApp (AsioNetworkModule)
 
@@ -105,6 +106,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 <details><summary>Shared Implementation</summary>
 
 - [x] raygraphic -> RayGraphicModule
+  - [ ] rework sound -> SoundRessource
 - [ ] sfmlgraphic -> SfmlGraphicModule
 - [ ] sdlgraphic -> SdlGraphicModule
 - [ ] asionetwork -> AsioNetworkModule
@@ -113,6 +115,10 @@ IWindow*  <---------------------------->  SfmlWindow*
 </details>
 
 ## Testing
+
+<details>
+<summary></summary>
+
 
 - [x] GTest
 - [x] set WorkingDirectory
@@ -123,14 +129,23 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
 && ctest --test-dir build --output-on-failure
 ```
 
+</details>
+
 ## CI
+
+<details><summary></summary>
 
 - [x] ci test on repository
 - [x] gui test -> see raygraphic
+</details>
 
 ## Documentation
+
+<details><summary></summary>
 
 - [x] org wiki
 - [ ] generate doxygen on repository
 - [ ] merge doxygen on organisation.
 - [ ] ci - cron to update it every day.
+
+</details>
