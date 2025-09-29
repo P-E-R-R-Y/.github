@@ -98,6 +98,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 - [x] imodule -> IModule
 - [x] igraphic -> IGraphicModule
   - [ ] rework sound -> with SoundRessource
+  - [ ] rework sprite -> with TextureRessource
 - [ ] iapp -> IAppModule
 - [ ] inetwork (want to work and learn and use standalone asio) -> INetworkApp (AsioNetworkModule)
 
