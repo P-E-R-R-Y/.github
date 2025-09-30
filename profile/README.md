@@ -75,7 +75,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 
 ## Libraries
 
-<details><summary>Basics</summary>
+### Basics
 
 - [x] CMake
 - [x] FetchDependencies (using FindPackage)
@@ -83,17 +83,13 @@ IWindow*  <---------------------------->  SfmlWindow*
 - [ ] CMakeUtils -> ToolBSL 
 - [ ] HunterV3 using IModule + ECS + IGraphic,IApp + ImpGraphic(optionally ImpApp which could be the game).
 
-</details>
-
-<details><summary>Static Concrete</summary>
+### Static Concrete
 
 - [x] system
 - [x] maths
 - [ ] ecs
 
-</details>
-
-<details><summary>Interface</summary>
+### Static Interface
 
 - [x] imodule -> IModule
 - [x] igraphic -> IGraphicModule
@@ -103,9 +99,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 - [ ] iapp -> IAppModule
 - [ ] inetwork (want to work and learn and use standalone asio) -> INetworkApp (AsioNetworkModule)
 
-</details>
-
-<details><summary>Shared Implementation</summary>
+### Shared Implementation</summary>
 
 - [x] raygraphic -> RayGraphicModule
 - [x] sfmlgraphic -> SfmlGraphicModule
@@ -113,13 +107,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 - [ ] asionetwork -> AsioNetworkModule
 - [ ] hunterapp -> HunterAppModule
 
-</details>
-
 ## Testing
-
-<details>
-<summary></summary>
-
 
 - [x] GTest
 - [x] set WorkingDirectory
@@ -130,23 +118,14 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
 && ctest --test-dir build --output-on-failure
 ```
 
-</details>
-
 ## CI
-
-<details><summary></summary>
 
 - [x] ci test on repository
 - [x] gui test -> see raygraphic
-</details>
 
 ## Documentation
-
-<details><summary></summary>
 
 - [x] org wiki
 - [ ] generate doxygen on repository
 - [ ] merge doxygen on organisation.
 - [ ] ci - cron to update it every day.
-
-</details>
