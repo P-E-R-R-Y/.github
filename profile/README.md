@@ -91,26 +91,23 @@ IWindow*  <---------------------------->  SfmlWindow*
 
 ### Static Interface
 
-- [x] imodule -> IModule
-- [x] igraphic -> IGraphicModule
-  - [ ] rework -> add SoundBuffer, Texture, Font
-- [ ] iapp -> IAppModule
-- [ ] inetwork (Udp & Tcp)
+- [x] imodule (IModule)
+- [x] igraphic (IGraphicModule)
+  - [ ] feat (SoundBuffer, Texture, Font)
+- [ ] iapp (IAppModule)
+- [ ] inetwork (INetworkModule)
 
 ### Shared Implementation</summary>
 
-- [x] raygraphic -> RayGraphicModule
-- [x] sfmlgraphic -> SfmlGraphicModule
-- [ ] sdlgraphic -> SdlGraphicModule
-
-- [ ] hunterapp -> HunterAppModule
-
-- [ ] asionetwork -> AsioNetworkModule
+- [x] raygraphic (RayGraphicModule)
+- [x] sfmlgraphic (SfmlGraphicModule)
+- [ ] sdlgraphic (SdlGraphicModule)
+- [ ] hunterapp (HunterAppModule)
+- [ ] asionetwork (AsioNetworkModule)
 
 ## Testing
 
 - [x] GTest
-- [x] set WorkingDirectory
 
 ```
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
@@ -120,8 +117,8 @@ cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
 
 ## CI
 
-- [x] ci test on repository
-- [x] gui test -> see raygraphic
+- [x] compile & play GTest
+- [x] play GTest with graphical environement (see raygraphic or sfmlgraphic)
 
 ## Documentation
 
