@@ -108,9 +108,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 <details><summary>Shared Implementation</summary>
 
 - [x] raygraphic -> RayGraphicModule
-  - [ ] rework like igraphic
-- [ ] sfmlgraphic -> SfmlGraphicModule
-  - [ ] rework like igraphic
+- [x] sfmlgraphic -> SfmlGraphicModule
 - [ ] sdlgraphic -> SdlGraphicModule
 - [ ] asionetwork -> AsioNetworkModule
 - [ ] hunterapp -> HunterAppModule
