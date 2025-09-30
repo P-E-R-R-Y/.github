@@ -93,19 +93,19 @@ IWindow*  <---------------------------->  SfmlWindow*
 
 - [x] imodule -> IModule
 - [x] igraphic -> IGraphicModule
-  - [ ] rework sound -> with SoundRessource
-  - [ ] rework sprite -> with TextureRessource
-  - [ ] rework text -> with Font
+  - [ ] rework -> add SoundBuffer, Texture, Font
 - [ ] iapp -> IAppModule
-- [ ] inetwork (want to work and learn and use standalone asio) -> INetworkApp (AsioNetworkModule)
+- [ ] inetwork (Udp & Tcp)
 
 ### Shared Implementation</summary>
 
 - [x] raygraphic -> RayGraphicModule
 - [x] sfmlgraphic -> SfmlGraphicModule
 - [ ] sdlgraphic -> SdlGraphicModule
-- [ ] asionetwork -> AsioNetworkModule
+
 - [ ] hunterapp -> HunterAppModule
+
+- [ ] asionetwork -> AsioNetworkModule
 
 ## Testing
 
