@@ -94,7 +94,7 @@ IWindow*  <---------------------------->  SfmlWindow*
 - [x] imodule (IModule)
 - [x] igraphic (IGraphicModule)
   - [ ] feat (SoundBuffer, Texture, Font)
-- [ ] iapp (IAppModule)
+- [x] iapp (IAppModule)
 - [ ] inetwork (INetworkModule)
 
 ### Shared Implementation</summary>
