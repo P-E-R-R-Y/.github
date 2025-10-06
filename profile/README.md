@@ -87,7 +87,9 @@ IWindow*  <---------------------------->  SfmlWindow*
 
 - [x] system
 - [x] maths
-- [ ] ecs
+- [x] ecs
+  - [ ] type traits
+- [x] i18n
 
 ### Static Interface
 
