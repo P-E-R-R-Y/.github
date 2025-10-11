@@ -1,130 +1,86 @@
-# Wiki (P-E-R-R-Y)
+# 🌟 P-E-R-R-Y   
+
+A **C++ development kit** to build games and applications from scratch, without Unity/Unreal.  
+Provides **core libraries**, **interfaces**, and **implementations** so you can focus on building your app instead of plumbing.
+Build & Tested on macos M2, and tested with ci on ubuntu (even graphical lib XD).
+
+---
+
+## ✨ Overview
+
+`P-E-R-R-Y DevKit` is a modular C++ devkit that provides:
+
+- **Static libraries** for core systems:
+  - [x] system
+  - [x] maths
+  - [x] [ecs (Entity Componennt System)](https://p-e-r-r-y.github.io/ecs)
+  - [x] [i18n (Internationalisation)](https://p-e-r-r-y.github.io/i18n)
+  - [x] procedurals (perlin noise, automates cellulaires, random walks, L systems, Bruit fractal, Graph/Tree )
+
+- **Interface modules** (`IModule`, `IGraphicModule`, `IAppModule`) to abstract platform and library dependencies.  
+  - [x] imodule
+  - [x] igraphic
+  - [x] iapp
+
+- **Concrete implementations** for graphics (Raylib, SFML), apps, and optional network modules.  
+  - [x] raygraphic
+  - [x] sfmlgraphic
+  - [ ] sdlgraphic (need rework from P-E-R-R-Y/PERRY)
+  - [ ] openglgraphic
+
+- **Testing tools** 
+  - [x] CXX17+ GoogleTest. usualy CXX20 (the belovel version)
+  - [x] CXX17- HandMades. usualy CXX11 (the legacy version)
+
+- **Flexible module system** to swap components dynamically.
+
+Think of it as a **C++ game/app starter kit**: you get the essentials pre-built, but everything is modular and customizable.
+
+---
+
+## 🏗️ How It Works
 
 <details>
-<summary>
-Libraries
-</summary>
+<summary>1️⃣ Static Libraries</summary>
 
-### Static
+These are **ready-to-use C++ libraries** that don’t depend on any runtime frameworks:
 
-- Concrete classes are use to define standard type or not abstract classes (not yet or not required) like .
-
-- Interface classes are used in a Patterns where IWindow gives RaylibWindow, SfmlWindow, by encapsulating Raylib or SFML.
-
-### Shared
-
-- Encapsulation is used to develop an app or anything using the interface and depending on the initialisation of the interface it will use raylib or sfml, avoiding dependencies. by giving the possibility to change concrete class used.
-
-### Example
-
-> This way you avoid depending on raylib or any library.
-
-Before:
-```
-Game -> Raylib
-```
-After:
-```
-Game -> IGraphic -> RayGraphic -> Raylib
-                 -> SfmlGraphic -> Sfml
-                 -> ...
-```
+- **System** – Platform abstraction (file, time, logging).  
+- **Maths** – Vector, matrix, random utilities.  
+- **ECS** – Entity Component System for game objects and logic.
+- **i18n** – Internationalization library for multi-language support.  
 </details>
 
 <details>
-<summary>
-Module
-</summary>
+<summary>2️⃣ Interface Modules</summary>
 
-The Module is a flexible interface layer that lets you load, manage, and interact with modules without knowing their concrete implementation.
+Define abstract **interfaces** so your code doesn’t depend on specific libraries:
 
-Like a computer stores files it doesn’t understand, this system can handle modules dynamically, letting them act, be used, or interact with others while keeping their internal behavior hidden.
+- **IModule** – Base module interface.  
+- **IGraphic** – Abstract graphics interface. Supports multiple backends (Raylib, SFML, SDL).  
+- **IApp** – Abstract application interface for windowing and lifecycle.  
+- **INetwork** – Abstract networking (foreseen).
 
-ModuleRegistry tracks modules by type and allows switching the active module, enabling seamless extensibility and runtime flexibility.
-
-Modules are like files on a computer: each has a name and type, but the system itself doesn’t need to fully understand them. Just like .exe or .doc can be executed or read directly, other files (.pdf, .png, .obj) require a specific application to use them. Similarly, a module can represent an Application, Graphic Library, Network Library, or any component—usable by other modules without knowing all its internal details.
-
-
-### Pattern Overview
-
-```
-DLL
- │
- │ createModule()
- ▼
-IModule*
- │
- │ dynamic_cast
- ▼
-IGraphicModule*  <-------------------->  SfmlGraphicModule*
- │                                          (concrete)
- │ GetWindow()                              
- ▼
-IWindow*  <---------------------------->  SfmlWindow*
-```
-
-### Explanation
-
-1. **DLL** provides `createModule()` → returns `IModule*`.  
-2. **ModuleRegistry** stores `IModule*` and retrieves by type.  
-3. Cast to **type-specific interface** (example: `IGraphicModule*`) to access specialized features.  
-4. **Concrete implementations** are hidden behind interfaces.  
-5. Sub-objects (example: `IWindow*`) are returned as interface pointers, hiding the real type (`SfmlWindow*`).
-
+> This allows you to write **generic code** without binding to Raylib, SFML, or any other library.
 </details>
 
-## Libraries
+<details>
+<summary>3️⃣ Implementations</summary>
 
-### Basics
+Concrete modules implement the interfaces:
 
-- [x] CMake
-- [x] FetchDependencies (using FindPackage)
-- [x] Test (GoogleTest)
-- [ ] CMakeUtils -> ToolBSL 
-- [ ] HunterV3 using IModule + ECS + IGraphic,IApp + ImpGraphic(optionally ImpApp which could be the game).
+- **RayGraphic** – Uses Raylib for graphics.  
+- **SfmlGraphic** – Uses SFML for graphics.  
+- **SfmlGraphic** – Uses SFML for graphics. (need rework from P-E-R-R-Y/Perry)
+- **HunterApp** – Example application.  
+- **AsioNetwork** – Networking with Asio (foreseen).
+</details>
 
-### Static Concrete
+<details>
+<summary>4️⃣ Module Registry</summary>
 
-- [x] system
-- [x] maths
-- [x] ecs
-  - [ ] type traits
-- [x] i18n
+The `ModuleRegistry` keeps track of all modules and lets you **switch implementations at runtime**:
 
-### Static Interface
-
-- [x] imodule (IModule)
-- [x] igraphic (IGraphicModule)
-  - [ ] feat (SoundBuffer, Texture, Font)
-- [x] iapp (IAppModule)
-- [ ] inetwork (INetworkModule)
-
-### Shared Implementation</summary>
-
-- [x] raygraphic (RayGraphicModule)
-- [x] sfmlgraphic (SfmlGraphicModule)
-- [ ] sdlgraphic (SdlGraphicModule)
-- [ ] hunterapp (HunterAppModule)
-- [ ] asionetwork (AsioNetworkModule)
-
-## Testing
-
-- [x] GTest
-
-```
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release \
-&& cmake --build build --clean-first \
-&& ctest --test-dir build --output-on-failure
-```
-
-## CI
-
-- [x] compile & play GTest
-- [x] play GTest with graphical environement (see raygraphic or sfmlgraphic)
-
-## Documentation
-
-- [x] org wiki
-- [ ] generate doxygen on repository
-- [ ] merge doxygen on organisation.
-- [ ] ci - cron to update it every day.
+```text
+Game -> IGraphicModule -> RayGraphicModule -> Raylib
+                          -> SfmlGraphicModule -> SFML
