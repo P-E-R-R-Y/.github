@@ -15,7 +15,7 @@ Build & Tested on macos M2, and tested with ci on ubuntu (even graphical lib XD)
   - [x] maths
   - [x] [ecs (Entity Componennt System)](https://p-e-r-r-y.github.io/ecs)
   - [x] [i18n (Internationalisation)](https://p-e-r-r-y.github.io/i18n)
-  - [x] procedurals (perlin noise, automates cellulaires, random walks, L systems, Bruit fractal, Graph/Tree )
+  - [x] procedurals (deterministic: perlin noise, automates cellulaires, random walks, L systems, Bruit fractal, Graph/Tree, RoomsGenerator)
 
 - **Interface modules** (`IModule`, `IGraphicModule`, `IAppModule`) to abstract platform and library dependencies.  
   - [x] imodule
